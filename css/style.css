@@ -1,0 +1,451 @@
+:root{
+    --pal-color-0:#000b1c;
+    --pal-color-1:#00347a;
+    --pal-color-2:#004ab4;
+    --pal-color-3:#007aff;
+    --pal-color-4:#6dbbff;
+    --pal-color-5: #dcecff;
+    --pal-color-6:#eef5ff;
+}
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: Arial;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--pal-color-0);
+}
+/*header*/
+.header{
+    width: 100%;
+    height: 80px;
+    background-color: var(--pal-color-1);
+    display: flex;
+    align-items:  center;
+    justify-content: space-between;
+padding:0 100px;
+}
+.logo{
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--pal-color-6);
+    text-shadow: 4px 2px 3px rgba(0, 11, 28, 0.596);
+}
+.barrs{
+    display: none;
+}
+.nav ul{
+    display: flex;
+}
+.nav ul li a{
+    display: block;
+    color:var(--pal-color-6);
+    box-shadow: 4px 2px 12px rgba(0, 11, 28, 0.616);
+    font-size: 20px;
+    padding: 10px 25px;
+    border-radius:50px;
+    transition: 0.2s;
+    margin: 0 5px;
+}
+.nav ul li a:hover{
+    color: #0F0F0F;
+    box-shadow: 4px 2px 12px rgba(0, 11, 28, 0.616);
+    background-color: var(--pal-color-5);
+}
+.nav ul li a.active{
+    color: #0F0F0F;
+    box-shadow: 4px 2px 12px rgba(0, 11, 28, 0.616);
+    background-color: var(--pal-color-5);
+}
+/*PRESENTACION*/
+.container {
+    display: flex;
+    width: 90vw;
+  }
+  
+  .panel {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 50px;
+    color: var(--pal-color-6);
+    cursor: pointer;
+    flex: 0.5;
+    margin: 10px;
+    position: relative;
+    -webkit-transition: all 700ms ease-in;
+  }
+  
+  .panel h3 {
+    font-size: 24px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+  }
+  
+  .panel.active {
+    flex: 5;
+  }
+  
+  .panel.active h3 {
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+  }
+  /*ubicacion*/
+  .ubicacioncont{
+    height: 630px;
+    width: 100%;
+  }
+  .ubip{
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: left;
+    height:  100%;
+    align-items: center;
+    display: grid;
+    grid: "textoini . ." 1fr
+    "mapc . ." 1fr
+    "mapc . ." 1fr
+    /1fr 1fr 1fr;
+}
+.mapcontg{
+padding-left: 140px;
+    grid-area: mapc;
+    width: 100%;
+    display: block;
+    
+}
+@media screen and (max-width: 795px){
+    .ifmap{
+        width: 370px;
+        height: 300px;
+    }
+    
+}
+
+.mapcont{
+    width: 100%;
+    height: 100%;
+}
+.texto{
+    grid-area:textoini ;
+    padding: 13% 0;
+    padding-left: 140px;
+    width: 100%;
+    font-weight: bold;
+    text-shadow: 1px 3px 4px  rgba(0, 0, 0, 0.5);
+
+}
+.bienv1{
+    font-size: 45px;
+    color: var(--pal-color-4);
+}
+.bienvini{
+    color: #fff;
+}
+.bienv2{
+    color: #fff;
+    font-size: 33px;
+}
+.bienv1, .bienvini, .bienv2{
+    width: max-content;
+    padding: 10px 0 ;
+    text-align: left;
+}
+@media screen and (max-width: 865px){
+    .bienv1, .bienvini, .bienv2{
+        width: max-content;
+        padding: 14px 0 ;
+
+    }
+
+    .bienv1{
+        font-size: 25px;
+    }
+    .bienv2{
+        font-size: 15px;
+    }
+}
+  @media (max-width: 480px) {
+    .container {
+      width: 100vw;
+    }
+  }
+  /*producto detalles*/
+.producto{
+    text-align: center;
+    width: 100%;
+    height: 2800px;
+    padding: 0 140px;
+    color: var(--pal-color-6);
+    margin-top:25px ;
+    line-height: 1.4;
+}
+.img-portada {
+    display: block;
+    margin: auto auto 4px;
+    width: 400px;
+    height: 500px;
+    
+}
+.img-portada > img{
+    width: 100%;
+    height: 100%;
+}
+.cont-descripcion > p{
+    width: 500px;
+    display: block;
+    margin: auto;
+}
+.spf {
+    font-weight: normal;
+}
+.ficha-tec >strong{
+display: block;
+}
+.capturas > img{
+    width: 700px;
+    display: block;
+    margin: 20px auto;
+}
+.producto h3{
+    color: var(--pal-color-3);
+}
+/*grid recomendados*/
+.destacados-cont{
+    width: 100%;
+    height: 500px;
+    padding: 0 140px;
+}
+.title-contdestacados{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    width: 60%;
+    height: 10%;
+    padding: 14px;
+}
+ .title-contdestacados h3, .tittle-ultipublis h3{
+    margin: 10px;
+    color: var(--pal-color-4);
+max-width: max-content;
+}
+
+.grid-destacados{
+    padding: 5px ;
+    width: 100%;
+    height: 80%;
+
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+
+}
+
+.cont-ultim{
+    width: 100%;
+    height: 800px;
+    padding: 0 140px;
+}
+.tittle-ultipublis{
+    display: flex;
+    align-items: center;
+    height: 10%;
+}
+.grid-ultim{
+    padding: 5px;
+    width: 100%;
+    height: 80%;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.grid-ultim > .tarjeta{
+    max-width: 200px;
+}
+
+.tarjeta{
+    position: relative;
+    transition: all .3s ease;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    max-width: 300px;
+}
+
+.img-tarjeta:first-child{
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 60px 60px
+    -60px rgb(0, 30, 255, 0.5);
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.titulo-tarjeta{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform: translateY(25%);
+    transition:  .3s ease;
+    opacity: 0;
+    color: var(--pal-color-6);
+    text-align: center;
+    padding-bottom: 35px;
+    font-weight: bold;
+}
+.tarjeta:hover{
+    transform: perspective(250px)
+    rotateX(10deg)
+    translateY(-5%)
+    translateZ(0); 
+}
+.tarjeta::before{
+content: '';
+position: absolute;
+bottom: 0;
+height: 100%;
+width: 100%;
+background-image: linear-gradient(
+    to bottom,
+    transparent 10%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0)95%
+);
+opacity: 0;
+transition: all .3s ease;
+}
+/*mostrar el degradado*/
+.tarjeta:hover::before{
+    opacity: 1;
+}
+.tarjeta:hover .titulo-tarjeta{
+    opacity: 1;
+    transform: translateY(10%);
+}
+/*footer*/
+.foot1 {
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--pal-color-1);
+    color: var(--pal-color-6);
+    padding: 15px;
+    margin: 0;
+    font-family: Arial;
+  }
+  .fila-contactos, .fila-redes {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .fila-contactos h2, .fila-redes h2 {
+    font-size: 41px;
+  }
+  
+  .fila-contactos p, .fila-redes a {
+    margin: 5px 7px;
+    font-size: 20px;
+  }
+  
+  .fila-redes a img {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+  }
+
+    .foot2{
+
+      background-color: var(--pal-color-0);
+      color: var(--pal-color-4);
+      width: 100%;
+      height: 55px;
+      text-align: center;
+      padding: 1px;
+      font-size: 25px;
+      font-family: Arial;
+
+    }
+    .fila-contactos, .fila-redes {
+        margin: 30px 0;
+    }
+    .footer, .foot2{
+      margin-top: 0;
+    }
+
+@media  only screen and (max-width:1320px){
+    .header{
+        padding: 0 50px;
+    }
+    .foot1 {
+        
+        flex-direction: column;
+        padding: 70px;
+      }
+      .foot2 p{
+            margin-top: 19px;
+        font-size: 15px;
+      }
+
+}
+@media only screen and (max-width:1100px){
+    .header{
+        padding: 0 30px;
+    }
+}
+@media only screen and (max-width:900px ) {
+ .barrs{
+    display: block;
+    cursor: pointer;
+}
+.barrs .line  {
+ width: 30px;
+ height: 3px;
+ background: var(--pal-color-6);
+ margin: 6px 0;   
+}
+.nav{
+    height: 0;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    background:var(--pal-color-1);
+    transition: 0.5s;
+    overflow: hidden;
+    z-index: 6;
+}
+.nav.active{
+    height: 450px;
+}
+.nav ul {
+    display: block;
+    width: fit-content;
+    margin: 80px auto 0 auto;
+    text-align: center;
+    transition: 0.5s;
+    opacity: 0;
+}
+.nav.active ul{
+    opacity: 1;
+}
+.nav ul li a{
+    margin-bottom: 12px;
+    color: var(--pal-color-6);
+}
+}
