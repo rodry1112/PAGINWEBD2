@@ -4,7 +4,7 @@ var juegos = [
         titulo: "THE MEDIUM",
         descripcion: "Loremes ipsum dolor sit amet, consectetur adipiscing elit.",
         fichaTecnica: {
-            plataforma: "PCc",
+            plataforma: "PC",
             idiomaTextos: "Español (MX/ES), Inglés, Francés",
             idiomaVoces: "Inglés",
             ano: 2022,
@@ -22,13 +22,82 @@ var juegos = [
         tipoAdquisicion: "Virtual",
         fechaEstreno: "2022-01-01"
     },
-    // Agrega más juegos según sea necesario
+    {
+        imagenDePortada: "../imagenes/dawnofwar.png",
+        titulo: "Dawn of War Soul Storm",
+        descripcion: "videojeugo ambientado en el mundo del milenio 40, del que la humanidad se enfreta a multiples razas conocidas como xenos por la gloria del emperador.",
+        fichaTecnica: {
+            plataforma: "PC",
+            idiomaTextos: "Español (MX/ES), Inglés, Francés",
+            idiomaVoces: "Inglés",
+            ano: 2003,
+            tamano: "2.5GB",
+            formato: "7Zip",
+            genero: "Aventura"
+        },
+        capturas: ["../imagenes/demostracion1.jpeg", "../imagenes/demostracion2.jpg", "../imagenes/demostracion3.png"],
+        videoYT: "https://www.youtube.com/embed/Y7lxZ_bEGNM?si=4TMSV1V5egmFP1aa",
+        requisitosMinimos: "Sistema Operativo: Windows 10, Procesador: Intel Core i5, RAM: 8 GB, Tarjeta Gráfica: NVIDIA GTX 970",
+        precio: 34.99,
+        genero: "Aventura",
+        plataforma: "PC",
+        idioma: "Español, Inglés",
+        tipoAdquisicion: "Virtual, fisico",
+        fechaEstreno: "2022-01-01"
+    },
+    {
+        imagenDePortada: "../imagenes/ejemplo2.jpeg",
+        titulo: "crysis",
+        descripcion: "Loremes ipsum dolor sit amet, consectetur adipiscing elit.",
+        fichaTecnica: {
+            plataforma: "PC",
+            idiomaTextos: "Español (MX/ES), Inglés, Francés",
+            idiomaVoces: "Inglés, español, frances",
+            ano: 2022,
+            tamano: "2.5GB",
+            formato: "7Zip",
+            genero: "Aventura"
+        },
+        capturas: ["../imagenes/demostracion1.jpeg", "../imagenes/demostracion2.jpg", "../imagenes/demostracion3.png"],
+        videoYT: "https://www.youtube.com/embed/Y7lxZ_bEGNM?si=4TMSV1V5egmFP1aa",
+        requisitosMinimos: "Sistema Operativo: Windows 10, Procesador: Intel Core i5, RAM: 8 GB, Tarjeta Gráfica: NVIDIA GTX 970",
+        precio: 59.99,
+        genero: "Aventura",
+        plataforma: "PC",
+        idioma: "Español, Inglés",
+        tipoAdquisicion: "Virtual",
+        fechaEstreno: "2022-01-01"
+    },
+    {
+        imagenDePortada: "../imagenes/ejemplo3.jpeg",
+        titulo: "BATLEFIELD 2042",
+        descripcion: "Loremes ipsum dolor sit amet, consectetur adipiscing elit.",
+        fichaTecnica: {
+            plataforma: "PC",
+            idiomaTextos: "Español (MX/ES), Inglés, Francés",
+            idiomaVoces: "Inglés",
+            ano: 2022,
+            tamano: "2.5GB",
+            formato: "7Zip",
+            genero: "Aventura"
+        },
+        capturas: ["../imagenes/demostracion1.jpeg", "../imagenes/demostracion2.jpg", "../imagenes/demostracion3.png"],
+        videoYT: "https://www.youtube.com/embed/Y7lxZ_bEGNM?si=4TMSV1V5egmFP1aa",
+        requisitosMinimos: "Sistema Operativo: Windows 10, Procesador: Intel Core i5, RAM: 8 GB, Tarjeta Gráfica: NVIDIA GTX 970",
+        precio: 59.99,
+        genero: "Aventura",
+        plataforma: "PC",
+        idioma: "Español, Inglés",
+        tipoAdquisicion: "Virtual",
+        fechaEstreno: "2022-01-01"
+    }   
 ];
 
 // Función para generar dinámicamente las tarjetas en el catálogo
 function generarTarjetas() {
     var catalogo = document.querySelector('.grid-catalogo');
-    
+    /*var destacados = document.querySelector('.grid-destacados');
+    var ultimo =document.querySelector('grid-ultim');*/
     juegos.forEach(function (juego) {
         var tarjeta = document.createElement('article');
         tarjeta.classList.add('tarjeta');
@@ -39,7 +108,7 @@ function generarTarjetas() {
         var imagen = document.createElement('img');
         imagen.classList.add('img-tarjeta');
         imagen.src = juego.imagenDePortada;
-
+        
         var titulo = document.createElement('p');
         titulo.classList.add('titulo-tarjeta');
         titulo.textContent = juego.titulo;
@@ -49,7 +118,8 @@ function generarTarjetas() {
 
         // Añade la tarjeta al catálogo
         catalogo.appendChild(tarjeta);
-
+        /*destacados.appendChild(tarjeta);
+        ultimo.appendChild(tarjeta);*/
         // Evento clic para redireccionar a la página del producto
         tarjeta.addEventListener('click', function() {
             // Recupera la información del juego desde el atributo data
@@ -88,6 +158,7 @@ function llenarPaginaProducto() {
             document.querySelector('.f5').textContent = juegoSeleccionado.fichaTecnica.tamano;
             document.querySelector('.f6').textContent = juegoSeleccionado.fichaTecnica.formato;
             document.querySelector('.f7').textContent = juegoSeleccionado.fichaTecnica.genero;
+            //llenado de la datos de la ventana Vmodal
             document.querySelector('.prec').textContent = juegoSeleccionado.precio;
             document.querySelector('.gen').textContent = juegoSeleccionado.genero;
             document.querySelector('.idio').textContent = juegoSeleccionado.idioma; // Corregido aquí
